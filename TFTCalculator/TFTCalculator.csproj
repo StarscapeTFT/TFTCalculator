@@ -1,0 +1,84 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFrameworks>net472;netcoreapp3.1</TargetFrameworks>
+    <UseWPF>true</UseWPF>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <ApplicationIcon>Resources\TFTCalculatorIcon.ico</ApplicationIcon>
+    <Version>1.3.5.0</Version>
+    <Platforms>x64;x86</Platforms>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Platform)'=='x64'">
+    <PlatformTarget>x64</PlatformTarget>
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Platform)'=='x86'">
+    <PlatformTarget>x86</PlatformTarget>
+    <RuntimeIdentifier>win-x86</RuntimeIdentifier>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)'=='Release'">
+    <OutputPath>..\Build\Release</OutputPath>
+    <DebugType>None</DebugType>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)'=='Debug'">
+    <OutputPath>..\Build\Debug</OutputPath>
+  </PropertyGroup>
+  
+  <ItemGroup Condition="'$(Platform)'=='x86'">
+    <EmbeddedResource Include="Costura32\openblas.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\background.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\busyicon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\notificationicon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\erroricon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\warningicon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Costura.Fody" Version="4.1.0" />
+    <PackageReference Include="Octokit" Version="0.48.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TFTCalculatorMiniBLAS\TFTCalculatorMiniBLAS.vcxproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="OxyPlot">
+      <HintPath>..\Dependencies\OxyPlot\net45\OxyPlot.dll</HintPath>
+    </Reference>
+    <Reference Include="OxyPlot.Wpf">
+      <HintPath>..\Dependencies\OxyPlot\net45\OxyPlot.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="OxyPlot.Wpf.Shared">
+      <HintPath>..\Dependencies\OxyPlot\net45\OxyPlot.Wpf.Shared.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Resources\TFTCalculatorIcon.ico">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
+    <Exec Command="if $(Platform) == x64 (&#xD;&#xA;xcopy $(ProjectDir)FodyWeavers_x64.xml $(ProjectDir)FodyWeavers.xml* /Y&#xD;&#xA;) ELSE (&#xD;&#xA;xcopy $(ProjectDir)FodyWeavers_x86.xml $(ProjectDir)FodyWeavers.xml* /Y&#xD;&#xA;)" />
+  </Target>
+  
+</Project>

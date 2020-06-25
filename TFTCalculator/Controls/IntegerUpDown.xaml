@@ -1,0 +1,89 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:TFTCalculator"
+                    xmlns:options="http://schemas.microsoft.com/winfx/2006/xaml/presentation/options">
+
+    <Geometry x:Key="UpArrowGeometry">M0,5 L4.5,.5 9,5 6,5 4.5,3.5 3,5 z</Geometry>
+    <Geometry x:Key="DownArrowGeometry">M0,0 L3,0 4.5,1.5 6,0 9,0 4.5,4.5 z</Geometry>
+
+    <DataTemplate x:Key="IncreaseGlyph">
+        <Path Width="9"
+            Height="5"
+            Data="{StaticResource UpArrowGeometry}"
+            Fill="{Binding Path=Foreground, RelativeSource={RelativeSource AncestorType={x:Type RepeatButton}}}"
+            SnapsToDevicePixels="True"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Focusable="False" />
+    </DataTemplate>
+
+    <DataTemplate x:Key="DecreaseGlyph">
+        <Path Width="9"
+            Height="5"
+            Data="{StaticResource DownArrowGeometry}"
+            Fill="{Binding Path=Foreground, RelativeSource={RelativeSource AncestorType={x:Type RepeatButton}}}"
+            SnapsToDevicePixels="True"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Focusable="False" />
+    </DataTemplate>
+
+    <Style TargetType="{x:Type local:IntegerUpDown}">
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="BorderBrush" Value="Transparent" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="Focusable" Value="False" />
+        <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+        <Setter Property="IsTabStop" Value="True" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="Padding" Value="1" />
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:IntegerUpDown}">
+                    <Border Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="auto" />
+                            </Grid.ColumnDefinitions>
+
+                            <RepeatButton Grid.Column="1" Grid.Row="0" Name="Part_UpButton"
+                                          Width="{DynamicResource {x:Static SystemParameters.VerticalScrollBarWidthKey}}"
+                                          ContentTemplate="{StaticResource IncreaseGlyph}"
+                                          Foreground="{DynamicResource GlyphBrush}"
+                                          BorderThickness="0"
+                                          Padding="0,0,0,0" SnapsToDevicePixels="True"/>
+
+                            <TextBox Grid.Column="0" Grid.Row="0" Grid.RowSpan="2"
+                                     Name="Part_TextBox" Margin="0" Padding="4,0,0,0"
+                                     BorderThickness="0" VerticalContentAlignment="Center"
+                                     HorizontalContentAlignment="Left" HorizontalScrollBarVisibility="Hidden" />
+
+                            <RepeatButton Grid.Column="1" Grid.Row="1" Name="Part_DownButton"
+                                          Width="{DynamicResource {x:Static SystemParameters.VerticalScrollBarWidthKey}}"
+                                          ContentTemplate="{StaticResource DecreaseGlyph}"
+                                          Foreground="{DynamicResource GlyphBrush}"
+                                          BorderThickness="0"
+                                          Padding="0,0,0,0" SnapsToDevicePixels="True"/>
+                            
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="False">
+                            <Setter Property="Visibility" TargetName="Part_UpButton" Value="Collapsed"/>
+                            <Setter Property="Visibility" TargetName="Part_DownButton" Value="Collapsed"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>
