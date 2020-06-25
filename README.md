@@ -12,7 +12,7 @@ TFTCalculator is an interactive tool for calculating the probability of finding 
 
 TFTCalculator requires Windows 7 SP1 or later. Sorry Mac players :(.
 
-No installation required. Simply download the executable and run it. The Windows Defender Smartscreen might tell you it prevented an unrecognized app from starting. In that case, click on "More Info" and then "Run anyway".
+No installation required. Simply download the executable and run it. The Windows Defender Smartscreen might tell you it prevented an unrecognized app from starting. In that case, click on "More info" and then "Run anyway".
 
 **[64-bit](https://github.com/StarscapeTFT/TFTCalculator/releases/latest/download/TFTCalculator.exe):** Try this download first. If Windows is not up to date, you might need to install the [.NET Framework v4.7.2.](https://dotnet.microsoft.com/download/dotnet-framework/thank-you/net472-web-installer)
 

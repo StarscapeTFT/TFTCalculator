@@ -208,7 +208,7 @@
                    Source="/Resources/busyicon.png"
                    Width="40"
                    RenderTransformOrigin="0.46, 0.6"
-                   Margin="0, 0, 6, 12"
+                   Margin="0, 0, 8, 12"
                    Panel.ZIndex="100"
                    Grid.Row="1" Grid.Column="1">
                 <Image.RenderTransform>

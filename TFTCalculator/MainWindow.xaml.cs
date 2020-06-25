@@ -129,7 +129,7 @@ namespace TFTCalculator
         {
             ProcessStartInfo startInfo = new ProcessStartInfo
             {
-                FileName = "https://github.com/StarscapeTFT/TFTCalculator",
+                FileName = "https://github.com/StarscapeTFT/TFTCalculator#readme",
                 UseShellExecute = true
             };
 
@@ -140,7 +140,7 @@ namespace TFTCalculator
         {
             ProcessStartInfo startInfo = new ProcessStartInfo
             {
-                FileName = "https://github.com/StarscapeTFT/TFTCalculator",
+                FileName = "https://github.com/StarscapeTFT/TFTCalculator#readme",
                 UseShellExecute = true
             };
 
