@@ -147,7 +147,7 @@
                         </Button>
 
                         <!-- Patch selector -->
-                        <ComboBox x:Name="PatchSelector" DockPanel.Dock="Right" HorizontalContentAlignment="Stretch" HorizontalAlignment="Center" VerticalAlignment="Top" ItemsSource="{Binding ShopSets}" SelectedIndex="0" SelectedItem="{Binding ShopProbability}" MouseLeave="PatchSelector_MouseLeave" WindowChrome.IsHitTestVisibleInChrome="True" Margin="0,3,0,0" Width="110">
+                        <ComboBox x:Name="PatchSelector" DockPanel.Dock="Right" HorizontalContentAlignment="Stretch" HorizontalAlignment="Center" VerticalAlignment="Top" ItemsSource="{Binding ShopSets}" SelectedIndex="0" SelectedItem="{Binding ShopProbability}" MouseLeave="PatchSelector_MouseLeave" WindowChrome.IsHitTestVisibleInChrome="True" Margin="0,3,0,0" Width="115">
                             <ComboBox.Triggers>
                                 <EventTrigger RoutedEvent="ComboBox.MouseEnter">
                                     <EventTrigger.Actions>

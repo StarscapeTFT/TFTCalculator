@@ -54,6 +54,57 @@ namespace TFTCalculator
             List<ShopProbabilityViewModel> shops = new List<ShopProbabilityViewModel>();
 
             shops.Add(new ShopProbabilityViewModel(
+                "Set 4 Patch 10.24",
+                new List<int>() { 13, 13, 13, 11, 8 },
+                new List<int>() { 29, 22, 18, 12, 10 },
+                new List<double[]>()
+                {
+                    new double[] { 100, 000, 000, 000, 000 },
+                    new double[] { 100, 000, 000, 000, 000 },
+                    new double[] { 075, 025, 000, 000, 000 },
+                    new double[] { 055, 030, 015, 000, 000 },
+                    new double[] { 045, 033, 020, 002, 000 },
+                    new double[] { 035, 035, 025, 005, 000 },
+                    new double[] { 024, 035, 030, 010, 001 },
+                    new double[] { 015, 025, 035, 020, 005 },
+                    new double[] { 010, 015, 030, 030, 015 },
+                }));
+
+            shops.Add(new ShopProbabilityViewModel(
+                "Set 4 Patch 10.20",
+                new List<int>() { 13, 13, 13, 11, 8 },
+                new List<int>() { 29, 22, 18, 12, 10 },
+                new List<double[]>()
+                {
+                    new double[] { 100, 000, 000, 000, 000 },
+                    new double[] { 100, 000, 000, 000, 000 },
+                    new double[] { 075, 025, 000, 000, 000 },
+                    new double[] { 055, 030, 015, 000, 000 },
+                    new double[] { 045, 030, 020, 005, 000 },
+                    new double[] { 030, 035, 025, 010, 000 },
+                    new double[] { 019, 035, 030, 015, 001 },
+                    new double[] { 014, 025, 035, 020, 006 },
+                    new double[] { 010, 015, 030, 030, 015 },
+                }));
+
+            shops.Add(new ShopProbabilityViewModel(
+                "Set 4 Release",
+                new List<int>() { 13, 13, 13, 11, 8 },
+                new List<int>() { 29, 22, 18, 12, 10 },
+                new List<double[]>()
+                {
+                                new double[] { 100, 000, 000, 000, 000 },
+                                new double[] { 100, 000, 000, 000, 000 },
+                                new double[] { 075, 025, 000, 000, 000 },
+                                new double[] { 055, 030, 015, 000, 000 },
+                                new double[] { 045, 030, 020, 005, 000 },
+                                new double[] { 030, 035, 025, 010, 000 },
+                                new double[] { 019, 035, 030, 015, 001 },
+                                new double[] { 014, 020, 035, 025, 006 },
+                                new double[] { 010, 015, 030, 030, 015 },
+                }));
+
+            shops.Add(new ShopProbabilityViewModel(
                 "Set 3.5 Release",
                 new List<int>() { 13, 13, 13, 10, 8 },
                 new List<int>() { 29, 22, 18, 12, 10 },
