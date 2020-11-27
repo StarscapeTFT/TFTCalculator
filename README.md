@@ -8,11 +8,13 @@ TFTCalculator is an interactive tool for calculating the probability of finding 
 * Calculate the exact probabilities of rolling
 * Compare rolling at different levels.
 
+*If you're wondering:* No, this program won't get you in trouble with Riot's terms of service. It *does not* read any data from the game, nor does it provide any input into the game, and it certainly won't play the game for you!
+
 ### Download
 
 TFTCalculator requires Windows 7 SP1 or later. Sorry Mac players :(.
 
-No installation required. Simply download the executable and run it. The Windows Defender Smartscreen might tell you it prevented an unrecognized app from starting. In that case, click on "More info" and then "Run anyway".
+No installation required. Simply download the executable and run it. The Windows Defender Smartscreen might tell you it prevented an unrecognized app from starting. In that case, click on "More info" and then "Run anyway". (If you are skeptical of mysterious internet executables, you are welcome to build from the source code yourself. See below.)
 
 **[64-bit](https://github.com/StarscapeTFT/TFTCalculator/releases/latest/download/TFTCalculator.exe):** Try this download first. If Windows is not up to date, you might need to install the [.NET Framework v4.7.2.](https://dotnet.microsoft.com/download/dotnet-framework/thank-you/net472-web-installer)
 
@@ -28,7 +30,7 @@ Exact mode calculates the exact probability of finding multiple units, fully acc
 * Buying one unit improves the odds of finding other units of the same tier
 * No more than 5 of your desired units can appear in a shop
 
-Because the probability of finding units is not independent, the exact calculation time scales exponentially with the number of units. If you are searching for 3 each of 3 different units, then there are 4×4×4 = 64 possible results (3 + 1 for finding none). The probabilities are described by a Markov chain, and the final calculation involves finding the powers of a 64×64 matrix. This pattern gets out of control for larger numbers of units: searching for 9 each of 4 different units involves calculating the powers of a 10000×10000 matrix!
+Because the probability of finding units is not independent, the exact calculation time scales exponentially with the number of units. If you are searching for 3 each of 3 different units, then there are 4×4×4 = 64 possible results (3 + 1 for finding none). This pattern gets out of control for larger numbers of units: searching for 9 each of 4 different units involves calculating the powers of a 10000×10000 matrix!
 
 Approximate mode simplifies the calculations by treating each unit as statistically independent. Instead of using a 10000×10000 matrix, approximate mode breaks the calculation into four 10×10 matrices, then combines the results afterwards. Although it is less accurate, the calculations are nearly instant and the results are generally within 1% of the exact mode, so don't be afraid to use it!
 
@@ -40,7 +42,7 @@ The source code for TFTCalculator is released under the MIT License. For conveni
 
 1. Download the latest version of [Visual Studio 2019](https://visualstudio.microsoft.com/vs/). The free Community Edition will work fine.
 2. Download this repository.
-3. Open the TFTCalculator.sln solution file with Visual Studio and build! It should work without fiddling with the dependencies.
+3. Open the TFTCalculator.sln solution file with Visual Studio and build! It should work without fiddling with the dependencies. If it doesn't, please let me know.
 
 The first time you open the solution file, Visual Studio will download two dependencies from NuGet:
 
