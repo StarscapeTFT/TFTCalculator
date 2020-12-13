@@ -54,6 +54,24 @@ namespace TFTCalculator
             List<ShopProbabilityViewModel> shops = new List<ShopProbabilityViewModel>();
 
             shops.Add(new ShopProbabilityViewModel(
+                "Set 4 Patch 10.25",
+                new List<int>() { 13, 13, 13, 11, 8 },
+                new List<int>() { 29, 22, 18, 12, 10 },
+                new List<double[]>()
+                {
+                    new double[] { 100, 000, 000, 000, 000 },
+                    new double[] { 100, 000, 000, 000, 000 },
+                    new double[] { 075, 025, 000, 000, 000 },
+                    new double[] { 055, 030, 015, 000, 000 },
+                    new double[] { 045, 033, 020, 002, 000 },
+                    new double[] { 035, 035, 025, 005, 000 },
+                    new double[] { 022, 035, 030, 012, 001 },
+                    new double[] { 015, 025, 035, 020, 005 },
+                    new double[] { 010, 015, 030, 030, 015 },
+                }));
+
+
+            shops.Add(new ShopProbabilityViewModel(
                 "Set 4 Patch 10.24",
                 new List<int>() { 13, 13, 13, 11, 8 },
                 new List<int>() { 29, 22, 18, 12, 10 },

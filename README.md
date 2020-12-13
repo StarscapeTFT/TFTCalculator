@@ -2,6 +2,8 @@
 
 <img src="/Doc/screenshot.png" align="right" width="379" height="334" />
 
+**Updated for Patch 10.25**
+
 TFTCalculator is an interactive tool for calculating the probability of finding units in Teamfight Tactics. This program allows you to:
 
 * Search for different combinations of up to four units
